@@ -63,13 +63,13 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application\src\samples" />
-      <recent name="C:\Users\NicoS\OneDrive\Dokumente\Projects\steppertron\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application\src\samples" />
       <recent name="C:\Users\NicoS\OneDrive\Dokumente\Projects\steppertron\src\samples" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application\src\samples" />
+      <recent name="C:\Users\NicoS\OneDrive\Dokumente\Projects\steppertron\src" />
     </key>
   </component>
   <component name="RunManager">
@@ -115,7 +115,7 @@
       <workItem from="1605155477026" duration="12000" />
       <workItem from="1605249868493" duration="4329000" />
       <workItem from="1605260402156" duration="6172000" />
-      <workItem from="1605277253267" duration="7872000" />
+      <workItem from="1605277253267" duration="9660000" />
     </task>
     <servers />
   </component>
@@ -155,22 +155,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="510" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605253683069" />
-    <state width="1877" height="212" key="GridCell.Tab.0.bottom" timestamp="1605286829949">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1605289158607">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="212" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605286829949" />
-    <state width="1877" height="212" key="GridCell.Tab.0.center" timestamp="1605286829949">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605289158607" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1605289158606">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="212" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605286829949" />
-    <state width="1877" height="212" key="GridCell.Tab.0.left" timestamp="1605286829948">
+    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605289158606" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1605289158606">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="212" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605286829948" />
-    <state width="1877" height="212" key="GridCell.Tab.0.right" timestamp="1605286829949">
+    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605289158606" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1605289158607">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="212" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605286829949" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605289158607" />
     <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1605130508391">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

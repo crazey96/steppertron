@@ -19,6 +19,9 @@ public class MidiParser {
     public MidiParser(File file) throws InvalidMidiDataException, IOException {
         this.sequence = MidiSystem.getSequence(file);
     }
+    public Sequence getSequence() {
+        return sequence;
+    }
     public ArrayList<Tick> parseMidiFile() {
         ArrayList<Tick> ticks = new ArrayList<>();
         for (int trackIndex = 0; trackIndex < sequence.getTracks().length; trackIndex++) {
@@ -164,8 +167,5 @@ public class MidiParser {
                         + metaMessage.getType());
             }
         }
-    }
-    public Sequence getSequence() {
-        return sequence;
     }
 }

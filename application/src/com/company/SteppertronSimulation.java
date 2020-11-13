@@ -4,21 +4,18 @@ import com.company.events.Tick;
 import com.company.events.TickNote;
 import com.company.events.TickTempoChange;
 
-import javax.sound.midi.MidiChannel;
-import javax.sound.midi.MidiSystem;
-import javax.sound.midi.MidiUnavailableException;
-import javax.sound.midi.Synthesizer;
+import javax.sound.midi.*;
 import java.util.ArrayList;
 
 public class SteppertronSimulation {
 
     private final ArrayList<Tick> ticks;
-    private final int resolution;
+    private final Sequence sequence;
 
     private final MidiChannel[] midiChannels;
 
-    public SteppertronSimulation(int resolution, ArrayList<Tick> ticks) throws MidiUnavailableException {
-        this.resolution = resolution;
+    public SteppertronSimulation(Sequence sequence, ArrayList<Tick> ticks) throws MidiUnavailableException {
+        this.sequence = sequence;
         this.ticks = ticks;
         // initialize synthesizer and channels
         Synthesizer synthesizer = MidiSystem.getSynthesizer();
@@ -41,7 +38,7 @@ public class SteppertronSimulation {
                         //System.out.println("note " + tickNote.getOn() + " " + Config.NOTE_NAMES[tickNote.getNote()] + tickNote.getOctave());
                     } else if(tick instanceof TickTempoChange) {
                         TickTempoChange tickTempoChange = (TickTempoChange) tick;
-                        microsecondsPerTick = (int)((60000 / ((double)tickTempoChange.getTempo() * resolution)) * 1000);
+                        microsecondsPerTick = (int)((60000 / ((double)tickTempoChange.getTempo() * sequence.getResolution())) * 1000);
                         //System.out.println("new bpm: " + tickTempoChange.getTempo());
                     }
                 }
