@@ -21,7 +21,7 @@ public class SteppertronSimulation {
         synthesizer.open();
         this.midiChannels = synthesizer.getChannels();
     }
-    public void play() throws InterruptedException {
+    public void play() {
         long count = 0;
         long maxCount = ticks.get(ticks.size() - 1).getNumber();
         while (count < maxCount) {
@@ -32,18 +32,28 @@ public class SteppertronSimulation {
                 if(tick instanceof TickNote
                     && tick.getNumber() == count) {
                     TickNote tickNote = (TickNote) tick;
-                    playNote(tickNote.getGeneralNote(), tickNote.getOn(), tickNote.getVelocity());
+                    playNote(tickNote.getChannel(), tickNote.getGeneralNote(), tickNote.getOn(), tickNote.getVelocity());
                 }
             }
             // TODO: calculate delta time (PPQ / BPM / Tick)
             count += 1;
+            sleep(300);
         }
     }
-    private void playNote(int note, boolean on, int velocity) {
+    private void playNote(int channel, int note, boolean on, int velocity) {
         if(on) {
-            midiChannels[0].noteOn(note, velocity);
+            midiChannels[channel].noteOn(note, velocity);
         } else {
-            midiChannels[0].noteOff(note);
+            midiChannels[channel].noteOff(note);
+        }
+    }
+    // sleep (time) microseconds
+    private void sleep(int time) {
+        long initTime = System.nanoTime();
+        while(true) {
+            if(System.nanoTime() - initTime > time * 1000) {
+                return;
+            }
         }
     }
 }
