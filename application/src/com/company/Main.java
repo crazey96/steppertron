@@ -9,15 +9,10 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, InvalidMidiDataException {
+    public static void main(String[] args) throws IOException, InvalidMidiDataException, InterruptedException, MidiUnavailableException {
         MidiParser midiParser = new MidiParser();
-        ArrayList<Tick> ticks = midiParser.parseMidiFile(new File("src/samples/starwars.mid"));
-        for(Tick tick : ticks) {
-            System.out.println(
-                    tick.getNumber()
-                    + " "
-                    + tick.getType()
-            );
-        }
+        ArrayList<Tick> ticks = midiParser.parseMidiFile(new File("src/samples/supermario.mid"));
+        SteppertronSimulation steppertronSimulation = new SteppertronSimulation(ticks);
+        steppertronSimulation.play();
     }
 }

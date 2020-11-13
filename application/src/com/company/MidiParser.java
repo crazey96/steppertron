@@ -45,11 +45,14 @@ public class MidiParser {
                 int noteOffKey = shortMessage.getData1();
                 int noteOffOctave = noteOffKey / 12 - 1;
                 int noteOff = noteOffKey % 12;
+                int velocity = shortMessage.getData2();
                 ticks.add(new TickNote(
                         eventTick,
                         Tick.Type.TickNote,
+                        noteOffKey,
                         noteOff,
                         noteOffOctave,
+                        velocity,
                         shortMessage.getChannel(),
                         false));
             }
@@ -57,11 +60,14 @@ public class MidiParser {
                 int noteOnKey = shortMessage.getData1();
                 int noteOnOctave = noteOnKey / 12 - 1;
                 int noteOn = noteOnKey % 12;
+                int velocity = shortMessage.getData2();
                 ticks.add(new TickNote(
                         eventTick,
                         Tick.Type.TickNote,
+                        noteOnKey,
                         noteOn,
                         noteOnOctave,
+                        velocity,
                         shortMessage.getChannel(),
                         true));
             }
@@ -96,28 +102,28 @@ public class MidiParser {
                 // TODO: implement text
             }
             case MidiConfig.COPYRIGHT_NOTICE -> {
-                // TODO: copyright notice
+                // TODO: implement copyright notice
             }
             case MidiConfig.TRACK_NAME -> {
-                // TODO: track name
+                // TODO: implement track name
             }
             case MidiConfig.INSTRUMENT_NAME -> {
                 // TODO: instrument name
             }
             case MidiConfig.LYRICS -> {
-                // TODO: lyrics
+                // TODO: implement lyrics
             }
             case MidiConfig.MARKER -> {
-                // TODO: marker
+                // TODO: implement marker
             }
             case MidiConfig.CUE_POINT -> {
-                // TODO: cue point
+                // TODO: implement cue point
             }
             case MidiConfig.CHANNEL_PREFIX -> {
-                // TODO: channel prefix
+                // TODO: implement channel prefix
             }
             case MidiConfig.END_OF_TRACK -> {
-                // TODO: end of track
+                // TODO: implement end of track
             }
             case MidiConfig.SET_TEMPO -> {
                 byte[] tempo = metaMessage.getData();
@@ -143,10 +149,10 @@ public class MidiParser {
                 ));
             }
             case MidiConfig.KEY_SIGNATURE -> {
-                // TODO: key signature
+                // TODO: implement key signature
             }
             case MidiConfig.SEQUENCER_SPECIFIC -> {
-                // TODO: sequencer specific
+                // TODO: implement sequencer specific
             }
             default -> {
                 System.err.println("@" + eventTick + " "

@@ -51,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/samples" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -63,11 +63,13 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\NicoS\OneDrive\Dokumente\Projects\steppertron\src\samples" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application\src\samples" />
       <recent name="C:\Users\NicoS\OneDrive\Dokumente\Projects\steppertron\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application\src\samples" />
+      <recent name="C:\Users\NicoS\OneDrive\Dokumente\Projects\steppertron\src\samples" />
     </key>
   </component>
   <component name="RunManager">
@@ -81,13 +83,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,6 +116,7 @@
       <workItem from="1605148759491" duration="4274000" />
       <workItem from="1605155477026" duration="12000" />
       <workItem from="1605249868493" duration="4329000" />
+      <workItem from="1605260402156" duration="6172000" />
     </task>
     <servers />
   </component>
@@ -143,30 +148,30 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1605253793542">
+    <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1605263983715">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605253793542" />
+    <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605263983715" />
     <state x="510" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605253683069">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="510" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605253683069" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1605254223572">
+    <state width="1877" height="341" key="GridCell.Tab.0.bottom" timestamp="1605267016884">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605254223572" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1605254223572">
+    <state width="1877" height="341" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605267016884" />
+    <state width="1877" height="341" key="GridCell.Tab.0.center" timestamp="1605267016884">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605254223572" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1605254223572">
+    <state width="1877" height="341" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605267016884" />
+    <state width="1877" height="341" key="GridCell.Tab.0.left" timestamp="1605267016884">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605254223572" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1605254223572">
+    <state width="1877" height="341" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605267016884" />
+    <state width="1877" height="341" key="GridCell.Tab.0.right" timestamp="1605267016884">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605254223572" />
+    <state width="1877" height="341" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605267016884" />
     <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1605130508391">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -187,14 +192,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605130574302" />
-    <state x="1920" y="106" width="1392" height="743" key="dock-window-1" timestamp="1605153386748">
+    <state x="1920" y="41" width="1333" height="697" key="dock-window-1" timestamp="1605264983420">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="1920" y="106" width="1392" height="743" key="dock-window-1/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605153386748" />
-    <state x="755" y="287" key="refactoring.ChangeSignatureDialog" timestamp="1605250994969">
+    <state x="1920" y="41" width="1333" height="697" key="dock-window-1/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605264983420" />
+    <state x="755" y="287" key="refactoring.ChangeSignatureDialog" timestamp="1605260736064">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="755" y="287" key="refactoring.ChangeSignatureDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605250994969" />
+    <state x="755" y="287" key="refactoring.ChangeSignatureDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605260736064" />
     <state x="623" y="235" key="search.everywhere.popup" timestamp="1604998302790">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
