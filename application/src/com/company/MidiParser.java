@@ -14,9 +14,13 @@ import java.util.Collections;
 
 public class MidiParser {
 
-    public ArrayList<Tick> parseMidiFile(File file) throws InvalidMidiDataException, IOException {
+    private final Sequence sequence;
+
+    public MidiParser(File file) throws InvalidMidiDataException, IOException {
+        this.sequence = MidiSystem.getSequence(file);
+    }
+    public ArrayList<Tick> parseMidiFile() {
         ArrayList<Tick> ticks = new ArrayList<>();
-        Sequence sequence = MidiSystem.getSequence(file);
         for (int trackIndex = 0; trackIndex < sequence.getTracks().length; trackIndex++) {
             parseTrack(sequence.getTracks()[trackIndex], ticks);
         }
@@ -130,7 +134,7 @@ public class MidiParser {
                 ticks.add(new TickTempoChange(
                         eventTick,
                         Tick.Type.TickTempoChange,
-                        new BigInteger(tempo).intValue()
+                        60000000 / new BigInteger(tempo).intValue()
                 ));
             }
             case MidiConfig.SMPTE_OFFSET -> {
@@ -160,5 +164,8 @@ public class MidiParser {
                         + metaMessage.getType());
             }
         }
+    }
+    public Sequence getSequence() {
+        return sequence;
     }
 }
