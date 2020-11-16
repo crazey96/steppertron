@@ -14,6 +14,8 @@ public class SteppertronSimulation {
 
     private final MidiChannel[] midiChannels;
 
+    private int microsecondsPerTick = 1;
+
     public SteppertronSimulation(Sequence sequence, ArrayList<Tick> ticks) throws MidiUnavailableException {
         this.sequence = sequence;
         this.ticks = ticks;
@@ -25,26 +27,35 @@ public class SteppertronSimulation {
     public void play() {
         long tickCount = 0;
         long maxCount = ticks.get(ticks.size() - 1).getNumber();
-        int microsecondsPerTick = 1;
         while (tickCount < maxCount) {
-            for(Tick tick : ticks) {
-                if(tick.getNumber() > tickCount) {
-                    break;
-                }
-                if(tick.getNumber() == tickCount) {
-                    if(tick instanceof TickNote) {
-                        TickNote tickNote = (TickNote) tick;
-                        playNote(tickNote.getChannel(), tickNote.getGeneralNote(), tickNote.getOn(), tickNote.getVelocity());
-                        //System.out.println("note " + tickNote.getOn() + " " + Config.NOTE_NAMES[tickNote.getNote()] + tickNote.getOctave());
-                    } else if(tick instanceof TickTempoChange) {
-                        TickTempoChange tickTempoChange = (TickTempoChange) tick;
-                        microsecondsPerTick = (int)((60000 / ((double)tickTempoChange.getTempo() * sequence.getResolution())) * 1000);
-                        //System.out.println("new bpm: " + tickTempoChange.getTempo());
-                    }
+            long initTime = System.nanoTime();
+            handleNextTickCount(tickCount);
+            tickCount += 1;
+            sleep(microsecondsPerTick, initTime);
+        }
+    }
+    private void handleNextTickCount(long tickCount) {
+        for(Tick tick : ticks) {
+            if(tick.getNumber() > tickCount) {
+                break;
+            }
+            if(tick.getNumber() == tickCount) {
+                if(tick instanceof TickNote) {
+                    TickNote tickNote = (TickNote) tick;
+                    playNote(tickNote.getChannel(), tickNote.getGeneralNote(), tickNote.getOn(), tickNote.getVelocity());
+                } else if(tick instanceof TickTempoChange) {
+                    TickTempoChange tickTempoChange = (TickTempoChange) tick;
+                    microsecondsPerTick = (int)((60000 / ((double)tickTempoChange.getTempo() * sequence.getResolution())) * 1000);
                 }
             }
-            tickCount += 1;
-            sleep(microsecondsPerTick);
+        }
+    }
+    // sleep (time) microseconds
+    private void sleep(int time, long initTime) {
+        while(true) {
+            if(System.nanoTime() - initTime > time * 1000) {
+                return;
+            }
         }
     }
     private void playNote(int channel, int note, boolean on, int velocity) {
@@ -52,15 +63,6 @@ public class SteppertronSimulation {
             midiChannels[channel].noteOn(note, velocity);
         } else {
             midiChannels[channel].noteOff(note);
-        }
-    }
-    // sleep (time) microseconds
-    private void sleep(int time) {
-        long initTime = System.nanoTime();
-        while(true) {
-            if(System.nanoTime() - initTime > time * 1000) {
-                return;
-            }
         }
     }
 }
