@@ -9,7 +9,7 @@ public final class MidiConfig {
     public static final int CONTROL_CHANGE = 0xB0;
     public static final int PROGRAM_CHANGE = 0xC0;
     public static final int CHANNEL_PRESSURE = 0xD0;
-    public static final int PITCH_BEND = 0XE0;
+    public static final int PITCH_BEND = 0xE0;
 
     // meta messages
     public static final int SEQUENCE_NUMBER = 0x00;
@@ -18,7 +18,7 @@ public final class MidiConfig {
     public static final int TRACK_NAME = 0x03;
     public static final int INSTRUMENT_NAME = 0x04;
     public static final int LYRICS = 0x05;
-    public static final int MARKER = 0X06;
+    public static final int MARKER = 0x06;
     public static final int CUE_POINT = 0x07;
     public static final int CHANNEL_PREFIX = 0x20;
     public static final int END_OF_TRACK = 0x2F;
@@ -26,5 +26,5 @@ public final class MidiConfig {
     public static final int SMPTE_OFFSET = 0x54;
     public static final int TIME_SIGNATURE = 0x58;
     public static final int KEY_SIGNATURE = 0X59;
-    public static final int SEQUENCER_SPECIFIC = 0X7F;
+    public static final int SEQUENCER_SPECIFIC = 0x7F;
 }

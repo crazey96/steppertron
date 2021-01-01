@@ -18,6 +18,7 @@ public class MidiParser {
 
     public MidiParser(File file) throws InvalidMidiDataException, IOException {
         this.sequence = MidiSystem.getSequence(file);
+
     }
     public Sequence getSequence() {
         return sequence;
@@ -25,28 +26,28 @@ public class MidiParser {
     public ArrayList<Tick> parseMidiFile() {
         ArrayList<Tick> ticks = new ArrayList<>();
         for (int trackIndex = 0; trackIndex < sequence.getTracks().length; trackIndex++) {
-            parseTrack(sequence.getTracks()[trackIndex], ticks);
+            parseTrack(sequence.getTracks()[trackIndex], ticks, trackIndex);
         }
         Collections.sort(ticks);
         return ticks;
     }
-    private void parseTrack(Track track, ArrayList<Tick> ticks) {
+    private void parseTrack(Track track, ArrayList<Tick> ticks, int trackIndex) {
         for (int i = 0; i < track.size(); i++) {
             MidiEvent event = track.get(i);
             MidiMessage midiMessage = event.getMessage();
-            parseMidiMessage(midiMessage, event.getTick(), ticks);
+            parseMidiMessage(midiMessage, event.getTick(), trackIndex, ticks);
         }
     }
-    private void parseMidiMessage(MidiMessage midiMessage, long eventTick, ArrayList<Tick> ticks) {
+    private void parseMidiMessage(MidiMessage midiMessage, long eventTick, int trackIndex,  ArrayList<Tick> ticks) {
         if (midiMessage instanceof ShortMessage) {
             ShortMessage shortMessage = (ShortMessage) midiMessage;
-            parseShortMessage(shortMessage, eventTick, ticks);
+            parseShortMessage(shortMessage, eventTick, trackIndex, ticks);
         } else if(midiMessage instanceof MetaMessage) {
             MetaMessage metaMessage = (MetaMessage) midiMessage;
             parseMetaMessage(metaMessage, eventTick, ticks);
         }
     }
-    private void parseShortMessage(ShortMessage shortMessage, long eventTick, ArrayList<Tick> ticks) {
+    private void parseShortMessage(ShortMessage shortMessage, long eventTick, int trackIndex, ArrayList<Tick> ticks) {
         switch (shortMessage.getCommand()) {
             case MidiConfig.NOTE_OFF -> {
                 int noteOffKey = shortMessage.getData1();
@@ -61,7 +62,8 @@ public class MidiParser {
                         noteOffOctave,
                         velocity,
                         shortMessage.getChannel(),
-                        false));
+                        false,
+                        trackIndex));
             }
             case MidiConfig.NOTE_ON -> {
                 int noteOnKey = shortMessage.getData1();
@@ -76,23 +78,14 @@ public class MidiParser {
                         noteOnOctave,
                         velocity,
                         shortMessage.getChannel(),
-                        true));
+                        true,
+                        trackIndex));
             }
-            case MidiConfig.POLYPHONIC_KEY_PRESSURE -> {
-                // TODO: implement polyphonic key pressure
-            }
-            case MidiConfig.CONTROL_CHANGE -> {
-                // TODO: implement control change
-            }
-            case MidiConfig.PROGRAM_CHANGE -> {
-                // TODO: implement program change
-            }
-            case MidiConfig.CHANNEL_PRESSURE -> {
-                // TODO: implement channel pressure
-            }
-            case MidiConfig.PITCH_BEND -> {
-                // TODO: implement pitch bend
-            }
+            case MidiConfig.POLYPHONIC_KEY_PRESSURE -> { }
+            case MidiConfig.CONTROL_CHANGE -> { }
+            case MidiConfig.PROGRAM_CHANGE -> { }
+            case MidiConfig.CHANNEL_PRESSURE -> { }
+            case MidiConfig.PITCH_BEND -> { }
             default -> {
                 System.err.println("@" + eventTick + " "
                         + "Not implemented yet: "
@@ -102,36 +95,16 @@ public class MidiParser {
     }
     private void parseMetaMessage(MetaMessage metaMessage, long eventTick, ArrayList<Tick> ticks) {
         switch (metaMessage.getType()) {
-            case MidiConfig.SEQUENCE_NUMBER -> {
-                // TODO: implement sequence number
-            }
-            case MidiConfig.TEXT -> {
-                // TODO: implement text
-            }
-            case MidiConfig.COPYRIGHT_NOTICE -> {
-                // TODO: implement copyright notice
-            }
-            case MidiConfig.TRACK_NAME -> {
-                // TODO: implement track name
-            }
-            case MidiConfig.INSTRUMENT_NAME -> {
-                // TODO: instrument name
-            }
-            case MidiConfig.LYRICS -> {
-                // TODO: implement lyrics
-            }
-            case MidiConfig.MARKER -> {
-                // TODO: implement marker
-            }
-            case MidiConfig.CUE_POINT -> {
-                // TODO: implement cue point
-            }
-            case MidiConfig.CHANNEL_PREFIX -> {
-                // TODO: implement channel prefix
-            }
-            case MidiConfig.END_OF_TRACK -> {
-                // TODO: implement end of track
-            }
+            case MidiConfig.SEQUENCE_NUMBER -> { }
+            case MidiConfig.TEXT -> { }
+            case MidiConfig.COPYRIGHT_NOTICE -> { }
+            case MidiConfig.TRACK_NAME -> { }
+            case MidiConfig.INSTRUMENT_NAME -> { }
+            case MidiConfig.LYRICS -> { }
+            case MidiConfig.MARKER -> { }
+            case MidiConfig.CUE_POINT -> { }
+            case MidiConfig.CHANNEL_PREFIX -> { }
+            case MidiConfig.END_OF_TRACK -> { }
             case MidiConfig.SET_TEMPO -> {
                 byte[] tempo = metaMessage.getData();
                 ticks.add(new TickTempoChange(
@@ -140,9 +113,7 @@ public class MidiParser {
                         60000000 / new BigInteger(tempo).intValue()
                 ));
             }
-            case MidiConfig.SMPTE_OFFSET -> {
-                // TODO: implement smpte offset
-            }
+            case MidiConfig.SMPTE_OFFSET -> { }
             case MidiConfig.TIME_SIGNATURE -> {
                 byte[] timeSignature = metaMessage.getData();
                 int numerator = timeSignature[0];
@@ -155,12 +126,8 @@ public class MidiParser {
                         numerator, denominator
                 ));
             }
-            case MidiConfig.KEY_SIGNATURE -> {
-                // TODO: implement key signature
-            }
-            case MidiConfig.SEQUENCER_SPECIFIC -> {
-                // TODO: implement sequencer specific
-            }
+            case MidiConfig.KEY_SIGNATURE -> { }
+            case MidiConfig.SEQUENCER_SPECIFIC -> { }
             default -> {
                 System.err.println("@" + eventTick + " "
                         + "MetaMessage not implemented yet (Type): "

@@ -25,7 +25,16 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4d6cb47-527b-45ea-8650-ebe4c5f1019f" name="Default Changelist" comment="" />
+    <list default="true" id="c4d6cb47-527b-45ea-8650-ebe4c5f1019f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/company/SerialService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MidiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MidiConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MidiParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MidiParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/RuntimePlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/RuntimePlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/SteppertronSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SteppertronSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/events/TickNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/events/TickNote.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +58,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/samples" />
@@ -63,13 +73,13 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application\src\samples" />
-      <recent name="C:\Users\NicoS\OneDrive\Dokumente\Projects\steppertron\src\samples" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application\src\samples" />
       <recent name="C:\Users\NicoS\OneDrive\Dokumente\Projects\steppertron\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application\src\samples" />
+      <recent name="C:\Users\NicoS\OneDrive\Dokumente\Projects\steppertron\src\samples" />
     </key>
   </component>
   <component name="RunManager">
@@ -79,6 +89,17 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,7 +126,14 @@
       <workItem from="1605249868493" duration="4329000" />
       <workItem from="1605260402156" duration="6172000" />
       <workItem from="1605277253267" duration="9660000" />
-      <workItem from="1605298479565" duration="4358000" />
+      <workItem from="1605298479565" duration="11770000" />
+      <workItem from="1607898364472" duration="56000" />
+      <workItem from="1607898510474" duration="170000" />
+      <workItem from="1607898795814" duration="1221000" />
+      <workItem from="1608093686197" duration="290000" />
+      <workItem from="1608093993396" duration="660000" />
+      <workItem from="1608187626756" duration="16000" />
+      <workItem from="1609297506222" duration="2797000" />
     </task>
     <servers />
   </component>
@@ -135,63 +163,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1605285453697">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="765" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605285453697" />
-    <state x="510" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605253683069">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="510" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605253683069" />
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1605514324784">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605514324784" />
-    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1605514324784">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605514324784" />
-    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1605514324783">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605514324783" />
-    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1605514324784">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605514324784" />
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1605130508391">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605130508391" />
-    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1605130508391">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605130508391" />
-    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1605130508391">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605130508391" />
-    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1605130508391">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605130508391" />
-    <state x="440" y="114" key="SettingsEditor" timestamp="1605130574302">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="440" y="114" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605130574302" />
-    <state x="1920" y="41" width="1333" height="697" key="dock-window-1" timestamp="1605264983420">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1920" y="41" width="1333" height="697" key="dock-window-1/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605264983420" />
-    <state x="755" y="287" key="refactoring.ChangeSignatureDialog" timestamp="1605260736064">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="755" y="287" key="refactoring.ChangeSignatureDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605260736064" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1605280314652">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605280314652" />
   </component>
 </project>

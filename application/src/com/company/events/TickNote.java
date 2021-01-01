@@ -8,8 +8,9 @@ public class TickNote extends Tick {
     private final int velocity;
     private final int channel;
     private final boolean on;
+    private final int track;
 
-    public TickNote(long number, Type type, int generalNote, int note, int octave, int velocity, int channel, boolean on) {
+    public TickNote(long number, Type type, int generalNote, int note, int octave, int velocity, int channel, boolean on, int track) {
         super(number, type);
         this.generalNote = generalNote;
         this.note = note;
@@ -17,6 +18,7 @@ public class TickNote extends Tick {
         this.velocity = velocity;
         this.channel = channel;
         this.on = on;
+        this.track = track;
     }
     public int getGeneralNote() {
         return generalNote;
@@ -35,5 +37,8 @@ public class TickNote extends Tick {
     }
     public boolean getOn() {
         return on;
+    }
+    public int getTrack() {
+        return track;
     }
 }
