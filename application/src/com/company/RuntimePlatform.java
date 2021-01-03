@@ -3,6 +3,7 @@ package com.company;
 import com.company.events.Tick;
 import com.company.events.TickNote;
 import com.company.events.TickTempoChange;
+import com.company.serial.SerialService;
 
 import javax.sound.midi.Sequence;
 import java.util.ArrayList;
@@ -15,8 +16,10 @@ public class RuntimePlatform extends SerialService implements Runnable {
     private int microsecondsPerTick = 1;
 
     public RuntimePlatform(Sequence sequence, ArrayList<Tick> ticks) {
+        super(() -> { });
         this.sequence = sequence;
         this.ticks = ticks;
+        this.initialize();
     }
     @Override
     public void run() {

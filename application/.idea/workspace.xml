@@ -26,14 +26,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d6cb47-527b-45ea-8650-ebe4c5f1019f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/SerialService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_fazecast_jSerialComm_2_6_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/serial/SerialHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/serial/SerialService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MidiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MidiConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MidiParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MidiParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/application.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/RuntimePlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/RuntimePlatform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/SteppertronSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SteppertronSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/events/TickNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/events/TickNote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/SerialService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +43,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -57,8 +57,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/samples" />
@@ -68,7 +73,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -93,13 +98,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -134,6 +141,7 @@
       <workItem from="1608093993396" duration="660000" />
       <workItem from="1608187626756" duration="16000" />
       <workItem from="1609297506222" duration="2797000" />
+      <workItem from="1609544113185" duration="1143000" />
     </task>
     <servers />
   </component>
