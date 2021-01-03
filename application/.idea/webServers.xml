@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bee900f5-8a81-45e3-bd29-0bde683eff7e" name="raspberrypi_steppertron">
+        <fileTransfer rootFolder="/home/pi" accessType="SFTP" host="raspberrypi" port="22" sshConfigId="ad63412c-b35a-487a-9966-8f28e7345c6f" sshConfig="raspberrypi_steppertron">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
