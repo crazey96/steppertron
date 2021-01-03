@@ -2,7 +2,10 @@ package com.company.serial;
 
 import com.fazecast.jSerialComm.SerialPort;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
 
 public class SerialService {
 
@@ -21,6 +24,8 @@ public class SerialService {
         }
         serialPort.setComPortParameters(115200, 8, 1, SerialPort.NO_PARITY);
         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_NONBLOCKING, 0, 0);
+        ThreadRX threadRX = new ThreadRX();
+        threadRX.start();
     }
     public void write(String message) {
         try {
@@ -29,6 +34,31 @@ public class SerialService {
             serialPort.getOutputStream().flush();
         } catch (IOException exception) {
             serialPort = null;
+        }
+    }
+    private class ThreadRX extends Thread {
+
+        @Override
+        public void run() {
+            while(serialPort != null) {
+                try {
+                    Reader _message = new StringReader(read());
+                    BufferedReader bufferedReader = new BufferedReader(_message);
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        System.out.println(line);
+                    }
+                } catch (IOException exception) {
+                    System.err.println(exception.getMessage());
+                    serialHandler.onConnectionLost();
+                    return;
+                }
+            }
+        }
+        private String read() {
+            byte[] readBuffer = new byte[serialPort.bytesAvailable()];
+            serialPort.readBytes(readBuffer, readBuffer.length);
+            return new String(readBuffer);
         }
     }
 }

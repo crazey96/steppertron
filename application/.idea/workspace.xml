@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="application:jar" />
+      <artifact name="application" />
+      <artifact name="runnable" />
     </artifacts-to-build>
   </component>
   <component name="BranchesTreeState">
@@ -31,14 +32,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d6cb47-527b-45ea-8650-ebe4c5f1019f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/application_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/application.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/runnable.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jSerialComm_2_6_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libraries/jSerialComm/jSerialComm-2.6.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/application_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/com_fazecast_jSerialComm_2_6_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MidiParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MidiParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/application.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/serial/SerialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/serial/SerialService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,19 +76,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/samples" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application" />
       <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application\src\samples" />
       <recent name="C:\Users\NicoS\OneDrive\Dokumente\Projects\steppertron\src" />
     </key>
@@ -93,7 +98,7 @@
       <recent name="C:\Users\NicoS\OneDrive\Dokumente\Projects\steppertron\src\samples" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="application" />
@@ -115,9 +120,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/unnamed/Main.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="application.jar (2)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/application_jar/application.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="application_jar.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/runnable/application_jar.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="archive.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/unnamed/archive.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.application_jar.jar" />
+        <item itemvalue="JAR Application.application.jar (2)" />
+        <item itemvalue="JAR Application.Main.jar" />
+        <item itemvalue="JAR Application.archive.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -146,7 +171,7 @@
       <workItem from="1608187626756" duration="16000" />
       <workItem from="1609297506222" duration="2797000" />
       <workItem from="1609544113185" duration="1143000" />
-      <workItem from="1609642190376" duration="1349000" />
+      <workItem from="1609642190376" duration="5787000" />
     </task>
     <servers />
   </component>
