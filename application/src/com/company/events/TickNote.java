@@ -1,10 +1,13 @@
 package com.company.events;
 
+import com.company.Config;
+
 public class TickNote extends Tick {
 
     private final int generalNote;
     private final int note;
     private final int octave;
+    private final int periodDuration;
     private final int velocity;
     private final int channel;
     private final boolean on;
@@ -15,6 +18,7 @@ public class TickNote extends Tick {
         this.generalNote = generalNote;
         this.note = note;
         this.octave = octave;
+        this.periodDuration = Config.NotesToDelayInMicroseconds.get(Config.NOTE_NAMES[note] + octave);
         this.velocity = velocity;
         this.channel = channel;
         this.on = on;
@@ -28,6 +32,9 @@ public class TickNote extends Tick {
     }
     public int getOctave() {
         return octave;
+    }
+    public int getPeriodDuration() {
+        return periodDuration;
     }
     public int getVelocity() {
         return velocity;

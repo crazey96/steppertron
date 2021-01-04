@@ -1,6 +1,8 @@
 package com.company;
 
 import com.company.events.Tick;
+import com.company.events.TickNote;
+import com.company.events.TickTempoChange;
 
 import javax.sound.midi.*;
 import java.util.ArrayList;
@@ -17,14 +19,12 @@ public class SteppertronSimulation extends RuntimePlatform {
         this.midiChannels = synthesizer.getChannels();
     }
     @Override
-    public void playNote(int note, boolean on, int track) {
-        playNote(note, on);
-    }
-    private void playNote(int note, boolean on) {
+    protected void playNote(int note, int numericalNote, boolean on, int track) {
+        System.out.println(numericalNote + " " + note);
         if(on) {
-            midiChannels[0].noteOn(note, 200);
+            midiChannels[0].noteOn(numericalNote, 100);
         } else {
-            midiChannels[0].noteOff(note);
+            midiChannels[0].noteOff(numericalNote);
         }
     }
 }

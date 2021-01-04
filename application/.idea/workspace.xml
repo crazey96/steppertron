@@ -32,17 +32,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d6cb47-527b-45ea-8650-ebe4c5f1019f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/application.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/runnable.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jSerialComm_2_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libraries/jSerialComm/jSerialComm-2.6.2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/application_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/com_fazecast_jSerialComm_2_6_2.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/samples/cmajor.mid" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/application.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/RuntimePlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/RuntimePlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/SteppertronSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SteppertronSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/events/TickNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/events/TickNote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/serial/SerialHandler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/serial/SerialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/serial/SerialService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../motorcontroller/motorcontroller.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../motorcontroller/motorcontroller.ino" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +51,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,12 +60,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1k4zkozwzGdCDKvjc0GRPU75Z5m" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -172,6 +174,8 @@
       <workItem from="1609297506222" duration="2797000" />
       <workItem from="1609544113185" duration="1143000" />
       <workItem from="1609642190376" duration="5787000" />
+      <workItem from="1609654983650" duration="443000" />
+      <workItem from="1609716630008" duration="11922000" />
     </task>
     <servers />
   </component>
@@ -201,5 +205,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

@@ -9,17 +9,11 @@ import java.io.StringReader;
 
 public class SerialService {
 
-    private final SerialHandler serialHandler;
-
     private SerialPort serialPort;
 
-    public SerialService(SerialHandler serialHandler) {
-        this.serialHandler = serialHandler;
-    }
     public void initialize() {
         serialPort = SerialPort.getCommPort("/dev/ttyUSB0");
         if(!serialPort.openPort()) {
-            serialHandler.onConnectionLost();
             return;
         }
         serialPort.setComPortParameters(115200, 8, 1, SerialPort.NO_PARITY);
@@ -50,7 +44,6 @@ public class SerialService {
                     }
                 } catch (IOException exception) {
                     System.err.println(exception.getMessage());
-                    serialHandler.onConnectionLost();
                     return;
                 }
             }

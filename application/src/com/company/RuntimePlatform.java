@@ -16,7 +16,6 @@ public class RuntimePlatform extends SerialService implements Runnable {
     private int microsecondsPerTick = 1;
 
     public RuntimePlatform(Sequence sequence, ArrayList<Tick> ticks) {
-        super(() -> { });
         this.sequence = sequence;
         this.ticks = ticks;
         this.initialize();
@@ -40,7 +39,11 @@ public class RuntimePlatform extends SerialService implements Runnable {
             if(tick.getNumber() == tickCount) {
                 if(tick instanceof TickNote) {
                     TickNote tickNote = (TickNote) tick;
-                    playNote(tickNote.getGeneralNote(), tickNote.getOn(), tickNote.getTrack());
+                    playNote(tickNote.getPeriodDuration(),
+                            tickNote.getGeneralNote(),
+                            tickNote.getOn(),
+                            tickNote.getTrack()
+                    );
                 } else if(tick instanceof TickTempoChange) {
                     TickTempoChange tickTempoChange = (TickTempoChange) tick;
                     microsecondsPerTick = (int)((60000 / ((double)tickTempoChange.getTempo() * sequence.getResolution())) * 1000);
@@ -56,10 +59,7 @@ public class RuntimePlatform extends SerialService implements Runnable {
             }
         }
     }
-    protected void playNote(int note, boolean on, int track) {
-        write("Note: " + note + " "
-                + "on: " + on + " "
-                + "track: " + track
-        );
+    protected void playNote(int note, int generalNote, boolean on, int track) {
+        write(note + " " + on + " " + track);
     }
 }
