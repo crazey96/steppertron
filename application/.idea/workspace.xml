@@ -32,16 +32,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d6cb47-527b-45ea-8650-ebe4c5f1019f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/samples/cmajor.mid" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/RuntimePlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/RuntimePlatform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/SteppertronSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SteppertronSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/events/TickNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/events/TickNote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/serial/SerialHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/serial/SerialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/serial/SerialService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../motorcontroller/motorcontroller.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../motorcontroller/motorcontroller.ino" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +168,8 @@
       <workItem from="1609642190376" duration="5787000" />
       <workItem from="1609654983650" duration="443000" />
       <workItem from="1609716630008" duration="11922000" />
+      <workItem from="1609980559438" duration="45000" />
+      <workItem from="1609980712351" duration="3236000" />
     </task>
     <servers />
   </component>
