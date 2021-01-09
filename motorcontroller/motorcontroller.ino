@@ -1,6 +1,14 @@
+// to store motor states
+typedef struct MotorState {
+  // note stores the delay in microseconds
+  int note;
+  // action stores if motor is on or off
+  bool action;
+};
+MotorState motorStates[5];
 // custom key-value pair array to store notes
 struct Note {
-  String noteName;
+  char* noteName;
   int delayInMicroseconds;
 };
 const Note notes[] = {
@@ -102,45 +110,53 @@ const Note notes[] = {
   {"C#0", 28861},
   {"C0", 30578}
 };
-
 // stepper motor pin for direction
 const int dirPin = 2;
 // stepper motor pin for one step
-const int stepPin = 3;
-
-bool trackAction[5];
-int trackDelay[5];
+const int stepPin[5] = { 3, 4, 5, 6, 7 };
 
 void setup() {
   // initialize pins
-  pinMode(stepPin, OUTPUT);
   pinMode(dirPin, OUTPUT);
+  for(int index = 0 ; index < 5; index++)
+  {
+    pinMode(stepPin[index], OUTPUT);
+  }
   // initialize serial connection
   Serial.begin(115200);
+  // set direction of motors
+  digitalWrite(dirPin, HIGH);
 }
 void loop() {
   if(Serial.available() > 0) {
-    String message = Serial.readStringUntil('\n');
-    Serial.println(getDelayInMicroseconds(message), DEC);
+    parseSerialMessage(Serial.readStringUntil('\n'));
   }
+  playNotes();
 }
-int getDelayInMicroseconds(String note) {
-  for (int i = 0; i < 97; i++) {
-    if(note.equals(notes[i].noteName)) {
-      return notes[i].delayInMicroseconds;
+void playNotes() {
+  for (int track = 0; track < 5; track++) {
+    if(motorStates[track].action) {
+      // Play Note
+      digitalWrite(stepPin, HIGH);
+      delayMicroseconds(motorStates[track].note);
+      digitalWrite(stepPin, LOW);
+      delayMicroseconds(motorStates[track].note);
     }
   }
-  return 0;
 }
-void playNote() {
-  //for (int track = 0; track <= 5; track++) { }
-  if(trackAction[0]) {
-    digitalWrite(dirPin, HIGH);
-    // Play Note
-    digitalWrite(stepPin, HIGH);
-    delayMicroseconds(trackDelay[0]);
-    digitalWrite(stepPin, LOW);
-    delayMicroseconds(trackDelay[0]);
+void parseSerialMessage(String message) {
+  // split message
+  String note = splitMessage(message, ' ', 0);
+  String action = splitMessage(message, ' ', 1);
+  int motor = splitMessage(message, ' ', 2).toInt();
+  // set note (delay)
+  int delayInMicroseconds = getDelayInMicroseconds(note);
+  motorStates[motor].note = delayInMicroseconds;
+  // set action
+  if(action.equals("on")) {
+    motorStates[motor].action = true;
+  } else {
+    motorStates[motor].action = false;
   }
 }
 String splitMessage(String data, char separator, int index) {
@@ -155,4 +171,12 @@ String splitMessage(String data, char separator, int index) {
     }
   }
   return found > index ? data.substring(strIndex[0], strIndex[1]) : "";
+}
+int getDelayInMicroseconds(String note) {
+  for (int i = 0; i < 97; i++) {
+    if(note.equals(notes[i].noteName)) {
+      return notes[i].delayInMicroseconds;
+    }
+  }
+  return 0;
 }

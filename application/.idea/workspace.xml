@@ -33,7 +33,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c4d6cb47-527b-45ea-8650-ebe4c5f1019f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../motorcontroller/motorcontroller.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../motorcontroller/motorcontroller.ino" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,17 +103,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/unnamed/Main.jar" />
       <method v="2" />
@@ -169,7 +158,8 @@
       <workItem from="1609654983650" duration="443000" />
       <workItem from="1609716630008" duration="11922000" />
       <workItem from="1609980559438" duration="45000" />
-      <workItem from="1609980712351" duration="3236000" />
+      <workItem from="1609980712351" duration="4429000" />
+      <workItem from="1610206218890" duration="2033000" />
     </task>
     <servers />
   </component>
