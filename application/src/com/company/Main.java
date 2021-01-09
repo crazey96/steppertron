@@ -8,9 +8,9 @@ public class Main {
 
     public static void main(String[] args) throws IOException, InvalidMidiDataException {
         //MidiParser midiParser = new MidiParser(new File("src/samples/supermario.mid"));
-        MidiParser midiParser = new MidiParser(new File("samples/cmajor.mid"));
         //SteppertronSimulation steppertronSimulation = new SteppertronSimulation(midiParser.getSequence(), midiParser.parseMidiFile());
         //steppertronSimulation.run();
+        MidiParser midiParser = new MidiParser(new File("samples/supermario.mid"));
         RuntimePlatform runtimePlatform = new RuntimePlatform(midiParser.getSequence(), midiParser.parseMidiFile());
         runtimePlatform.run();
     }

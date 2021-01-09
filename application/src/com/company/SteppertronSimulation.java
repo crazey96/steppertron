@@ -1,29 +1,35 @@
 package com.company;
 
 import com.company.events.Tick;
-import com.company.events.TickNote;
-import com.company.events.TickTempoChange;
 
 import javax.sound.midi.*;
 import java.util.ArrayList;
 
 public class SteppertronSimulation extends RuntimePlatform {
 
-    private final MidiChannel[] midiChannels;
+    private MidiChannel[] midiChannels;
 
-    public SteppertronSimulation(Sequence sequence, ArrayList<Tick> ticks) throws MidiUnavailableException {
+    public SteppertronSimulation(Sequence sequence, ArrayList<Tick> ticks) {
         super(sequence, ticks);
         // initialize synthesizer and channels
-        Synthesizer synthesizer = MidiSystem.getSynthesizer();
-        synthesizer.open();
-        this.midiChannels = synthesizer.getChannels();
+        try {
+            Synthesizer synthesizer = MidiSystem.getSynthesizer();
+            synthesizer.open();
+            this.midiChannels = synthesizer.getChannels();
+        } catch (MidiUnavailableException e) {
+            System.err.println(e.getMessage());
+        }
     }
     @Override
-    protected void playNote(int note, int numericalNote, boolean on, int track) {
-        System.out.println(numericalNote + " " + note);
+    protected void noteAction(String note, int numericalNote, boolean on) {
+        if(midiChannels == null) {
+            return;
+        }
         if(on) {
+            activeNotes++;
             midiChannels[0].noteOn(numericalNote, 100);
         } else {
+            activeNotes--;
             midiChannels[0].noteOff(numericalNote);
         }
     }

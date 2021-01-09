@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 public class RuntimePlatform extends SerialService implements Runnable {
 
+    protected int activeNotes;
+
     private final ArrayList<Tick> ticks;
     private final Sequence sequence;
 
@@ -18,6 +20,7 @@ public class RuntimePlatform extends SerialService implements Runnable {
     public RuntimePlatform(Sequence sequence, ArrayList<Tick> ticks) {
         this.sequence = sequence;
         this.ticks = ticks;
+        this.activeNotes = 0;
         this.initialize();
     }
     @Override
@@ -39,10 +42,9 @@ public class RuntimePlatform extends SerialService implements Runnable {
             if(tick.getNumber() == tickCount) {
                 if(tick instanceof TickNote) {
                     TickNote tickNote = (TickNote) tick;
-                    playNote(tickNote.getPeriodDuration(),
+                    noteAction(tickNote.getNote(),
                             tickNote.getGeneralNote(),
-                            tickNote.getOn(),
-                            tickNote.getTrack()
+                            tickNote.getOn()
                     );
                 } else if(tick instanceof TickTempoChange) {
                     TickTempoChange tickTempoChange = (TickTempoChange) tick;
@@ -59,7 +61,12 @@ public class RuntimePlatform extends SerialService implements Runnable {
             }
         }
     }
-    protected void playNote(int note, int generalNote, boolean on, int track) {
-        write(note + " " + on + " " + track);
+    protected void noteAction(String note, int numericalNote, boolean on) {
+        write(note + " " + on + " " + activeNotes);
+        if(on) {
+            activeNotes++;
+        } else {
+            activeNotes--;
+        }
     }
 }

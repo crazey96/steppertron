@@ -20,7 +20,6 @@ public class MidiParser {
         this.sequence = MidiSystem.getSequence(file);
 
     }
-
     public Sequence getSequence() {
         return sequence;
     }
@@ -33,7 +32,6 @@ public class MidiParser {
         Collections.sort(ticks);
         return ticks;
     }
-
     private void parseTrack(Track track, ArrayList<Tick> ticks, int trackIndex) {
         for (int i = 0; i < track.size(); i++) {
             MidiEvent event = track.get(i);
@@ -41,7 +39,6 @@ public class MidiParser {
             parseMidiMessage(midiMessage, event.getTick(), trackIndex, ticks);
         }
     }
-
     private void parseMidiMessage(MidiMessage midiMessage, long eventTick, int trackIndex, ArrayList<Tick> ticks) {
         if (midiMessage instanceof ShortMessage) {
             ShortMessage shortMessage = (ShortMessage) midiMessage;
@@ -51,7 +48,6 @@ public class MidiParser {
             parseMetaMessage(metaMessage, eventTick, ticks);
         }
     }
-
     private void parseShortMessage(ShortMessage shortMessage, long eventTick, int trackIndex, ArrayList<Tick> ticks) {
         switch (shortMessage.getCommand()) {
             case MidiConfig.NOTE_OFF: {
@@ -63,8 +59,7 @@ public class MidiParser {
                         eventTick,
                         Tick.Type.TickNote,
                         noteOffKey,
-                        noteOff,
-                        noteOffOctave,
+                        Config.NOTE_NAMES[noteOff] + "" + noteOffOctave,
                         velocity,
                         shortMessage.getChannel(),
                         false,
@@ -80,8 +75,7 @@ public class MidiParser {
                         eventTick,
                         Tick.Type.TickNote,
                         noteOnKey,
-                        noteOn,
-                        noteOnOctave,
+                        Config.NOTE_NAMES[noteOn] + "" + noteOnOctave,
                         velocity,
                         shortMessage.getChannel(),
                         true,
@@ -106,7 +100,6 @@ public class MidiParser {
             }
         }
     }
-
     private void parseMetaMessage(MetaMessage metaMessage, long eventTick, ArrayList<Tick> ticks) {
         switch (metaMessage.getType()) {
             case MidiConfig.SEQUENCE_NUMBER:

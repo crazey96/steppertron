@@ -124,8 +124,6 @@ void setup() {
   }
   // initialize serial connection
   Serial.begin(115200);
-  // set direction of motors
-  digitalWrite(dirPin, HIGH);
 }
 void loop() {
   if(Serial.available() > 0) {
@@ -134,12 +132,13 @@ void loop() {
   playNotes();
 }
 void playNotes() {
+  digitalWrite(dirPin, HIGH);
   for (int track = 0; track < 5; track++) {
     if(motorStates[track].action) {
       // Play Note
-      digitalWrite(stepPin, HIGH);
+      digitalWrite(stepPin[track], HIGH);
       delayMicroseconds(motorStates[track].note);
-      digitalWrite(stepPin, LOW);
+      digitalWrite(stepPin[track], LOW);
       delayMicroseconds(motorStates[track].note);
     }
   }
@@ -153,7 +152,7 @@ void parseSerialMessage(String message) {
   int delayInMicroseconds = getDelayInMicroseconds(note);
   motorStates[motor].note = delayInMicroseconds;
   // set action
-  if(action.equals("on")) {
+  if(action.equals("true")) {
     motorStates[motor].action = true;
   } else {
     motorStates[motor].action = false;
