@@ -26,10 +26,8 @@ public class SteppertronSimulation extends RuntimePlatform {
             return;
         }
         if(on) {
-            activeNotes++;
             midiChannels[0].noteOn(numericalNote, 100);
         } else {
-            activeNotes--;
             midiChannels[0].noteOff(numericalNote);
         }
     }

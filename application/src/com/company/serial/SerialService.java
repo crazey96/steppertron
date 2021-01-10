@@ -22,6 +22,7 @@ public class SerialService {
         threadRX.start();
     }
     public void write(String message) {
+        System.out.println(message);
         try {
             byte[] encoded = (message + "\n").getBytes();
             serialPort.getOutputStream().write(encoded);

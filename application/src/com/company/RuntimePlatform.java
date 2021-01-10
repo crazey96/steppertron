@@ -6,21 +6,21 @@ import com.company.events.TickTempoChange;
 import com.company.serial.SerialService;
 
 import javax.sound.midi.Sequence;
-import java.util.ArrayList;
+import java.util.*;
 
 public class RuntimePlatform extends SerialService implements Runnable {
-
-    protected int activeNotes;
 
     private final ArrayList<Tick> ticks;
     private final Sequence sequence;
 
     private int microsecondsPerTick = 1;
 
+    private Steppertron steppertron;
+
     public RuntimePlatform(Sequence sequence, ArrayList<Tick> ticks) {
         this.sequence = sequence;
         this.ticks = ticks;
-        this.activeNotes = 0;
+        this.steppertron = new Steppertron(5);
         this.initialize();
     }
     @Override
@@ -62,11 +62,10 @@ public class RuntimePlatform extends SerialService implements Runnable {
         }
     }
     protected void noteAction(String note, int numericalNote, boolean on) {
-        write(note + " " + on + " " + activeNotes);
         if(on) {
-            activeNotes++;
+            write(note + " true " + steppertron.addNote(note));
         } else {
-            activeNotes--;
+            write(note + " false " + steppertron.removeNote(note));
         }
     }
 }
