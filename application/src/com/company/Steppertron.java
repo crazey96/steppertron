@@ -9,7 +9,9 @@ public class Steppertron {
     }
     public int addNote(String note, int track, int channel) {
         int index = getNextAvailableIndex();
-        this.activeNotes[index] = new ActiveNote(note, track, channel);
+        if(index != -1) {
+            this.activeNotes[index] = new ActiveNote(note, track, channel);
+        }
         return index;
     }
     public int removeNote(String note, int track, int channel) {
@@ -29,8 +31,8 @@ public class Steppertron {
         int index = -1;
         do {
             index++;
-            if(index > activeNotes.length) {
-                return activeNotes.length;
+            if(index > activeNotes.length - 1) {
+                return -1;
             }
         } while(!(activeNotes[index] == null));
         return index;
