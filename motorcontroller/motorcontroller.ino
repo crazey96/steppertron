@@ -4,6 +4,8 @@ typedef struct MotorState {
   int note;
   // action stores if motor is on or off
   bool action;
+  bool high;
+  long previousTime;
 };
 MotorState motorStates[5];
 // custom key-value pair array to store notes
@@ -125,11 +127,34 @@ void setup() {
   // initialize serial connection
   Serial.begin(115200);
 }
+
 void loop() {
   if(Serial.available() > 0) {
     parseSerialMessage(Serial.readStringUntil('\n'));
   }
-  playNotes();
+  playMotor(0);
+  playMotor(1);
+  playMotor(2);
+  playMotor(3);
+  playMotor(4);
+}
+void playMotor(int motor) {
+  digitalWrite(dirPin, HIGH);
+  if(motorStates[motor].action) {
+   if(motorStates[motor].high) {
+    digitalWrite(stepPin[motor], HIGH);
+    if ((micros() - motorStates[motor].previousTime) >= motorStates[motor].note){
+      motorStates[motor].high = false;
+      motorStates[motor].previousTime = micros();
+    }
+   } else {
+    digitalWrite(stepPin[motor], LOW);
+    if ((micros() - motorStates[motor].previousTime) >= motorStates[motor].note){
+      motorStates[motor].high = true;
+      motorStates[motor].previousTime = micros();
+    }
+   }
+  }
 }
 void playNotes() {
   digitalWrite(dirPin, HIGH);
@@ -151,6 +176,8 @@ void parseSerialMessage(String message) {
   // set note (delay)
   int delayInMicroseconds = getDelayInMicroseconds(note);
   motorStates[motor].note = delayInMicroseconds;
+  motorStates[motor].high = true;
+  motorStates[motor].previousTime = micros();
   // set action
   if(action.equals("true")) {
     motorStates[motor].action = true;

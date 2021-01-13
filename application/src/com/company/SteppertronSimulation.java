@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.events.Tick;
+import com.company.events.TickNote;
 
 import javax.sound.midi.*;
 import java.util.ArrayList;
@@ -21,14 +22,14 @@ public class SteppertronSimulation extends RuntimePlatform {
         }
     }
     @Override
-    protected void noteAction(String note, int numericalNote, boolean on) {
+    protected void noteAction(TickNote tickNote) {
         if(midiChannels == null) {
             return;
         }
-        if(on) {
-            midiChannels[0].noteOn(numericalNote, 100);
+        if(tickNote.getOn()) {
+            midiChannels[0].noteOn(tickNote.getGeneralNote(), 100);
         } else {
-            midiChannels[0].noteOff(numericalNote);
+            midiChannels[0].noteOff(tickNote.getGeneralNote());
         }
     }
 }

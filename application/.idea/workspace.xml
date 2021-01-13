@@ -32,13 +32,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d6cb47-527b-45ea-8650-ebe4c5f1019f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/Steppertron.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/samples/tetris.mid" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/samples/GOT.mid" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MidiParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MidiParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/RuntimePlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/RuntimePlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Steppertron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Steppertron.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/SteppertronSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SteppertronSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/serial/SerialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/serial/SerialService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/events/TickNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/events/TickNote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/samples/cmajor.mid" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +77,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/samples" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/runnable/samples" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -88,8 +90,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application" />
+      <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application\out\artifacts\runnable\samples" />
       <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application\src\samples" />
+      <recent name="C:\Users\NicoS\OneDrive\Dokumente\GitHub\steppertron\application" />
       <recent name="C:\Users\NicoS\OneDrive\Dokumente\Projects\steppertron\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -177,6 +180,8 @@
       <workItem from="1609980712351" duration="4429000" />
       <workItem from="1610206218890" duration="6721000" />
       <workItem from="1610264408889" duration="3555000" />
+      <workItem from="1610473180435" duration="1159000" />
+      <workItem from="1610479956409" duration="5981000" />
     </task>
     <servers />
   </component>

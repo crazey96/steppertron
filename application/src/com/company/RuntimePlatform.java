@@ -15,7 +15,7 @@ public class RuntimePlatform extends SerialService implements Runnable {
 
     private int microsecondsPerTick = 1;
 
-    private Steppertron steppertron;
+    protected Steppertron steppertron;
 
     public RuntimePlatform(Sequence sequence, ArrayList<Tick> ticks) {
         this.sequence = sequence;
@@ -42,10 +42,7 @@ public class RuntimePlatform extends SerialService implements Runnable {
             if(tick.getNumber() == tickCount) {
                 if(tick instanceof TickNote) {
                     TickNote tickNote = (TickNote) tick;
-                    noteAction(tickNote.getNote(),
-                            tickNote.getGeneralNote(),
-                            tickNote.getOn()
-                    );
+                    noteAction(tickNote);
                 } else if(tick instanceof TickTempoChange) {
                     TickTempoChange tickTempoChange = (TickTempoChange) tick;
                     microsecondsPerTick = (int)((60000 / ((double)tickTempoChange.getTempo() * sequence.getResolution())) * 1000);
@@ -61,11 +58,17 @@ public class RuntimePlatform extends SerialService implements Runnable {
             }
         }
     }
-    protected void noteAction(String note, int numericalNote, boolean on) {
-        if(on) {
-            write(note + " true " + steppertron.addNote(note));
+    protected void noteAction(TickNote tickNote) {
+        if(tickNote.getOn()) {
+            int motor = steppertron.addNote(tickNote.getNote(), tickNote.getTrack(), tickNote.getChannel());
+            if(motor != -1) {
+                write(tickNote.getNote() + " true " + motor);
+            }
         } else {
-            write(note + " false " + steppertron.removeNote(note));
+            int motor = steppertron.removeNote(tickNote.getNote(), tickNote.getTrack(), tickNote.getChannel());
+            if(motor != -1) {
+                write(tickNote.getNote() + " false " + motor);
+            }
         }
     }
 }

@@ -61,8 +61,8 @@ public class MidiParser {
                         noteOffKey,
                         Config.NOTE_NAMES[noteOff] + "" + noteOffOctave,
                         velocity,
-                        shortMessage.getChannel(),
                         false,
+                        shortMessage.getChannel(),
                         trackIndex));
                 break;
             }
@@ -77,8 +77,8 @@ public class MidiParser {
                         noteOnKey,
                         Config.NOTE_NAMES[noteOn] + "" + noteOnOctave,
                         velocity,
-                        shortMessage.getChannel(),
                         true,
+                        shortMessage.getChannel(),
                         trackIndex));
                 break;
             }
