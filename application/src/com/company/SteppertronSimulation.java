@@ -27,8 +27,10 @@ public class SteppertronSimulation extends RuntimePlatform {
             return;
         }
         if(tickNote.getOn()) {
+            steppertron.addNote(tickNote.getNote(), tickNote.getTrack(), tickNote.getChannel());
             midiChannels[0].noteOn(tickNote.getGeneralNote(), 100);
         } else {
+            steppertron.removeNote(tickNote.getNote(), tickNote.getTrack(), tickNote.getChannel());
             midiChannels[0].noteOff(tickNote.getGeneralNote());
         }
     }

@@ -156,17 +156,15 @@ void playMotor(int motor) {
    }
   }
 }
-void playNotes() {
-  digitalWrite(dirPin, HIGH);
-  for (int track = 0; track < 5; track++) {
-    if(motorStates[track].action) {
-      // Play Note
-      digitalWrite(stepPin[track], HIGH);
-      delayMicroseconds(motorStates[track].note);
-      digitalWrite(stepPin[track], LOW);
-      delayMicroseconds(motorStates[track].note);
-    }
-  }
+void playNote() {
+  // set pin mode
+  pinMode(PIN, OUTPUT);
+  // set pin high
+  digitalWrite(PIN, HIGH);
+  delayMicroseconds(DELAY);
+  // set pin low
+  digitalWrite(PIN, LOW);
+  delayMicroseconds(DELAY);
 }
 void parseSerialMessage(String message) {
   // split message

@@ -7,6 +7,7 @@ public class Steppertron {
     public Steppertron(int motors) {
         this.activeNotes = new ActiveNote[motors];
     }
+    // add note and return index (slave * motor number)
     public int addNote(String note, int track, int channel) {
         int index = getNextAvailableIndex();
         if(index != -1) {
@@ -14,6 +15,7 @@ public class Steppertron {
         }
         return index;
     }
+    // remove note and return index (slave * motor number)
     public int removeNote(String note, int track, int channel) {
         for(int index = 0; index < activeNotes.length; index++) {
             if(activeNotes[index] != null
@@ -39,9 +41,9 @@ public class Steppertron {
     }
     private class ActiveNote {
 
-        private String note;
-        private int track;
-        private int channel;
+        private final String note;
+        private final int track;
+        private final int channel;
 
         public ActiveNote(String note, int track, int channel) {
             this.note = note;

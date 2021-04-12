@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig authType="PASSWORD" host="raspberrypi" id="ad63412c-b35a-487a-9966-8f28e7345c6f" port="22" customName="raspberrypi_steppertron" nameFormat="CUSTOM" username="pi">
+      <sshConfig authType="PASSWORD" connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="raspberrypi" id="ad63412c-b35a-487a-9966-8f28e7345c6f" port="22" customName="raspberrypi_steppertron" nameFormat="CUSTOM" username="pi">
         <option name="customName" value="raspberrypi_steppertron" />
       </sshConfig>
     </configs>

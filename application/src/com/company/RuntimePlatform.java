@@ -20,7 +20,7 @@ public class RuntimePlatform extends SerialService implements Runnable {
     public RuntimePlatform(Sequence sequence, ArrayList<Tick> ticks) {
         this.sequence = sequence;
         this.ticks = ticks;
-        this.steppertron = new Steppertron(5);
+        this.steppertron = new Steppertron(Config.SLAVES * Config.MOTORS);
         this.initialize();
     }
     @Override
@@ -60,14 +60,18 @@ public class RuntimePlatform extends SerialService implements Runnable {
     }
     protected void noteAction(TickNote tickNote) {
         if(tickNote.getOn()) {
-            int motor = steppertron.addNote(tickNote.getNote(), tickNote.getTrack(), tickNote.getChannel());
-            if(motor != -1) {
-                write(tickNote.getNote() + " true " + motor);
+            int index = steppertron.addNote(tickNote.getNote(), tickNote.getTrack(), tickNote.getChannel());
+            if(index != -1) {
+                int slave = index / Config.MOTORS;
+                int slaveMotor = index % Config.MOTORS;
+                write(slave,tickNote.getNote() + " true " + slaveMotor);
             }
         } else {
-            int motor = steppertron.removeNote(tickNote.getNote(), tickNote.getTrack(), tickNote.getChannel());
-            if(motor != -1) {
-                write(tickNote.getNote() + " false " + motor);
+            int index = steppertron.removeNote(tickNote.getNote(), tickNote.getTrack(), tickNote.getChannel());
+            if(index != -1) {
+                int slave = index / Config.MOTORS;
+                int slaveMotor = index % Config.MOTORS;
+                write(slave,tickNote.getNote() + " false " + slaveMotor);
             }
         }
     }

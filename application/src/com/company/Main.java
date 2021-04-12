@@ -7,10 +7,10 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException, InvalidMidiDataException {
-        //MidiParser midiParser = new MidiParser(new File("src/samples/supermario.mid"));
+        //MidiParser midiParser = new MidiParser(new File("src/samples/bohemianrhapsody.mid"));
         //SteppertronSimulation steppertronSimulation = new SteppertronSimulation(midiParser.getSequence(), midiParser.parseMidiFile());
         //steppertronSimulation.run();
-        MidiParser midiParser = new MidiParser(new File("samples/GOT.mid"));
+        MidiParser midiParser = new MidiParser(new File("samples/got.mid"));
         RuntimePlatform runtimePlatform = new RuntimePlatform(midiParser.getSequence(), midiParser.parseMidiFile());
         runtimePlatform.run();
     }

@@ -9,6 +9,9 @@ public final class Config {
             "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
     };
 
+    public static final int SLAVES = 2;
+    public static final int MOTORS = 5;
+
     // frequencies converted into 50% duty cycle delay (microseconds)
     // time period = 1 / frequency
     // full delay (microseconds) = time period * 1000000
